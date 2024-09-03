@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
+    <title>របាយការណ៍ពិន្ទុ</title>
+    <!-- plugins:css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <link rel="manifest" href="../../manifest.json">
+
+    <!-- inject:css -->
+    <!-- <link rel="stylesheet" href="./add-css.css"> -->
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <!-- <link rel="stylesheet" href="./add-css.css"> -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <!-- <link rel="stylesheet" href="../new-student/new-students.css"> -->
+    <link rel="stylesheet" href="../../fonts/Siemreap.ttf">
+    <!-- endinject -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="shortcut icon" href="../../images/SalaMOMLogo.png" />
+</head>
+
+<body>
+    <!-- <div class="container-scroller"> -->
+    <!-- partial:../../partials/_navbar.html -->
+    <!-- <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row myKh">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="../../admin.html"><img src="../../images/SalaMOMLogo.png"
+                        class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../../admin.html"><img src="../../images/SalaMOMLogo.png"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img id="user_img"
+                                src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" id="user_logout">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav> -->
+    <!-- partial -->
+    <!-- <div class="main-panel">
+            <div class="content-wrapper"> -->
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card card-primary card-outline">
+                <div class="card-body ">
+                    <div style="overflow-x: auto; padding: 15px; scrollbar-width: block;">
+                        <h4 class="card-title">សូមជ្រើសរើស</h4>
+                        <table class="table border-0 table-hover">
+                            <thead>
+                                <tr>
+                                    <td class="border-0 text-center">
+                                        <select class="form-control text-center" style="color: black;line-height: 2;"
+                                            id="sle_level">
+                                            <option>ជ្រើសរើសកម្រិត</option>
+                                        </select>
+                                        <br>
+                                        <label class="fw-bold">កម្រិត៖ <strong id="show_level"></strong></label>
+                                    </td>
+                                    <td class="border-0 text-center">
+                                        <select class="form-control text-center" style="color: black;line-height: 2;"
+                                            id="sle_grade">
+                                            <option>ជ្រើសរើសថ្នាក់</option>
+                                        </select>
+                                        <br>
+                                        <label class="fw-bold">ថ្នាក់ទី៖ <strong id="show_grade"></strong></label>
+                                    </td>
+                                    <td class="border-0 text-center">
+                                        <select class="form-control text-center" style="color: black;line-height: 2;"
+                                            id="sle_month">
+                                            <option>ជ្រើសរើសខែ</option>
+                                            <option value="October">តុលា</option>
+                                            <option value="November">វិច្ឆិកា</option>
+                                            <option value="December">ធ្នូ</option>
+                                            <option value="January">មករា</option>
+                                            <option value="February">កុម្ភៈ</option>
+                                            <option value="fourmonths1">ពិន្ទុ៤ខែឆមាសទី១</option>
+                                            <option value="1st Semester">ឆមាសទី១</option>
+                                            <option value="1st Semester Result">ប្រចាំឆមាសទី១</option>
+                                            <option value="March">មីនា</option>
+                                            <option value="April-May">មេសា-ឧសភា</option>
+                                            <option value="June">មិថុនា</option>
+                                            <option value="July">កក្កដា</option>
+                                            <option value="fourmonths2">ពិន្ទុ៤ខែឆមាសទី២</option>
+                                            <option value="2nd Semester">ឆមាសទី២</option>
+                                            <option value="2nd Semester Result">ប្រចាំឆមាសទី២</option>
+                                            <option value="Annual Year">ប្រចាំឆ្នាំ</option>
+                                        </select>
+                                        <br>
+                                        <label class="fw-bold">ខែ៖ <strong id="show_month"></strong></label>
+
+                                    </td>
+                                    <td class="border-0 text-center">
+                                        <select class="form-control text-center" style="color: black;line-height: 2;"
+                                            id="sle_year">
+                                            <option>ជ្រើសរើសឆ្នាំសិក្សា</option>
+                                        </select>
+                                        <br>
+                                        <label class="fw-bold">ឆ្នាំសិក្សា៖ <strong id="show_year"></strong></label>
+                                    </td>
+                                    <td class="border-0 text-center">
+                                        <input class="form-control text-center" style="color: black;line-height: 2;"
+                                            id="sle_divid">
+
+                                        <br>
+                                        <label class="fw-bold">តួចែក៖ <strong id="show_divid"></strong></label>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="border-0 text-center">
+                                        <button type="button" id="btnSave"
+                                            class="btn btn-info rounded shadowed btn-sm me-1 mb-1 dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="mdi mdi-printer"></i> Print
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" id="btn_print"><i class="mdi mdi-printer"></i>
+                                                    Print ពិនិត្យ</a>
+                                            </li>
+                                            <li><a class="dropdown-item" id="btn_print_result"><i
+                                                        class="mdi mdi-printer"></i> Print លទ្ធផល</a>
+                                            </li>
+                                        </ul>
+
+                                    </td>
+                                    <td class="border-0 text-center">
+                                        <button id="btn_save" class="btn btn-warning btn-sm" type="button"><i
+                                                class="mdi mdi-content-save"></i>
+                                            Save</button>
+                                    </td>
+                                    <!-- <td class="border-0 text-center">
+                                                        <button type="button" id="btnSave"
+                                                            class="btn btn-success rounded shadowed btn-sm me-1 mb-1 dropdown-toggle"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="mdi mdi-book-open-page-variant"></i>
+                                                            ពិន្ទុ៤ខែ
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" id="btn_print"
+                                                                    data-toggle="modal" data-target="#check4months1">
+                                                                    <i class="mdi mdi-book-open-page-variant"></i>
+                                                                    ពិន្ទុ៤ខែ ឆមាសទី១
+                                                                </a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" id="btn_print_result"
+                                                                    data-toggle="modal" data-target="#check4months2">
+                                                                    <i class="mdi mdi-book-open-page-variant"></i>
+                                                                    ពិន្ទុ៤ខែ ឆមាសទី២
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+
+
+                                                    </td> -->
+                                    <td class="border-0 text-center">
+                                        <input class="form-control text-center" type="date"
+                                            style="color: black;line-height: 2;" id="sle_date">
+
+                                        <br>
+                                    </td>
+                                    <td class="border-0 text-center">
+
+                                    </td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 grid-margin">
+            <div class="card card-primary card-outline">
+                <div class="card-body">
+                    <div style="overflow-x: auto;">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>សិស្សសរុប៖ <strong id="st_all" style="color: blue;"></strong>
+                                    </th>
+                                    <th>សិស្សស្រី៖ <strong id="st_female" style="color: blue;"></strong>
+                                    </th>
+                                    <th>សិស្សជាប់៖ <strong id="st_pass" style="color: rgb(32, 192, 0);"></strong></th>
+                                    <th>សិស្សស្រី៖ <strong id="st_pass_female" style="color: rgb(32, 192, 0);"></strong>
+                                    </th>
+                                    <th>សិស្សធ្លាក់៖ <strong id="total_fail_st" style="color: rgb(255, 0, 0);"></strong>
+                                    </th>
+                                    <th>សិស្សស្រី៖ <strong id="total_fail_female"
+                                            style="color: rgb(255, 0, 0);"></strong></th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="input-group">
+                            <div style="height: 2.86rem;margin-bottom: 5px;" class="input-group-prepend hover-cursor">
+                                <span class="input-group-text" id="search">
+                                    <i class="icon-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" id="inputsearchInput" placeholder="ស្វែងរក"
+                                aria-label="search" aria-describedby="search">
+                        </div>
+
+                    </div>
+                    <div class="table-fixed-top-left" style="overflow-x: auto; padding: 15px;height: 35rem;">
+                        <table class="table table-bordered table-hover border-dark" id="showData">
+                            <thead>
+                                <tr id="show_hearder" class="frezze"
+                                    style="background-color: rgb(39, 56, 129);color: aliceblue;">
+
+                                </tr>
+                            </thead>
+                            <tbody id="show_data" class="border-dark">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- For Printing -->
+                    <div style="display: none;">
+                        <div id="print_result">
+                            <table class="border-dark">
+                                <thead>
+                                    <tr id="show_hearder_print"
+                                        style="background-color: rgb(255, 255, 185);color: aliceblue;">
+                                    </tr>
+                                </thead>
+                                <tbody id="show_data_print" class="border-dark">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="display: none;">
+                        <div id="print_result_all">
+                            <table class="table table-bordered border-dark text_table content" id="result_all">
+                                <thead>
+                                    <tr id="show_hearder_result"
+                                        style="background-color: rgb(255, 255, 185);color: aliceblue;">
+                                    </tr>
+
+                                </thead>
+                                <tbody id="show_data_result" class="border-dark text_table">
+
+                                </tbody>
+                                <table class="table table-borderless border-dark text_table ">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:35vh;"></th>
+                                            <th style="width:8vh;"></th>
+                                            <th class="text-start text_table">- បញ្ឈប់បញ្ចីត្រឹមចំនួន
+                                                <span id="total_pass_all" style="color: blue;"></span>
+                                                នាក់ ស្រី <span id="total_female" style="color: blue;"></span> នាក់
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:35vh;"></th>
+                                            <th></th>
+                                            <th class="text-start text_table">- សិស្សជាប់មធ្យមភាគ <span
+                                                    id="total_pass_st" style="color: blue;"></span> នាក់
+                                                ស្រី <span id="total_pass_female" style="color: blue;"></span> នាក់</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:35vh;"></th>
+                                            <th></th>
+                                            <th class="text-start text_table">- សិស្សធ្លាក់មធ្យមភាគ
+                                                <span id="total_fail_std" style="color: blue;"></span>
+                                                នាក់ ស្រី <span id="total_fail_female_st" style="color: blue;"></span>
+                                                នាក់
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:35vh;"></th>
+                                            <th></th>
+                                            <th class="text-center text_table">រាជធានីភ្នំពេញ, ថ្ងៃទី
+                                                <span id="get_date_num" style="color: blue;"></span>
+                                                ខែ<span id="get_month" style="color: blue;"></span>
+                                                ឆ្នាំ <span id="get_year" style="color: blue;"></span>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:35vh;" class="text-center text_table">
+                                                បានឃើញ និងឯកភាព</th>
+                                            <th></th>
+                                            <th class="text-center text_table">គ្រូទទួលបន្ទុកថ្នាក់</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="width:35vh;" class="text-center text_table">
+                                                នាយិកាសាលា</th>
+                                            <th></th>
+                                            <th class="text-center text_table"></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Check 4 months -->
+    <div class="modal fade" id="check4months1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body" style="overflow: auto;">
+                    <table class="table table-bordered border-dark">
+                        <thead class="border-dark">
+                            <tr class="border-dark">
+                                <th class="border-dark text-center">ល.រ</th>
+                                <th class="border-dark text-center">ឈ្មោះពេញ</th>
+                                <th class="border-dark text-center">ភេទ</th>
+                                <th class="border-dark text-center">វិច្ឆិកា</th>
+                                <th class="border-dark text-center">ធ្នូ</th>
+                                <th class="border-dark text-center">មករា</th>
+                                <th class="border-dark text-center">កុម្ភៈ</th>
+                                <th class="border-dark text-center">ពិន្ទុសរុប</th>
+                                <th class="border-dark text-center">មធ្យមភាគ</th>
+                                <th class="border-dark text-center">តួចែក</th>
+                            </tr>
+                        </thead>
+                        <tbody class="border-dark" id="tablecheck4months1">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="check4months2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body" style="overflow: auto;">
+                    <table class="table table-bordered border-dark">
+                        <thead class="border-dark">
+                            <tr class="border-dark">
+                                <th class="border-dark text-center">ល.រ</th>
+                                <th class="border-dark text-center">ឈ្មោះពេញ</th>
+                                <th class="border-dark text-center">ភេទ</th>
+                                <th class="border-dark text-center">មីនា</th>
+                                <th class="border-dark text-center">មេសា-ឧសភា</th>
+                                <th class="border-dark text-center">មិថុនា</th>
+                                <th class="border-dark text-center">កក្កដា</th>
+                                <th class="border-dark text-center">ពិន្ទុសរុប</th>
+                                <th class="border-dark text-center">មធ្យមភាគ</th>
+                                <th class="border-dark text-center">តួចែក</th>
+                            </tr>
+                        </thead>
+                        <tbody class="border-dark" id="tablecheck4months2">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- </div>
+        </div> -->
+        <!-- main-panel ends -->
+        <!-- </div> -->
+        <!-- page-body-wrapper ends -->
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+        <script src="../../vendors/js/vendor.bundle.base.js"></script>
+        <!-- <script src="./tools-js.js"></script> -->
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <script type="module" src="./check4months.js"></script>
+        <script type="module" src="./secondary.js"></script>
+        <script type="module" src="./primary.js"></script>
+        <script type="module" src="./primaryS1r.js"></script>
+        <script type="module" src="./primaryS2r.js"></script>
+        <script type="module" src="./annualyear.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+        <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+        <script src="../../vendors/select2/select2.min.js"></script>
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="../../js/off-canvas.js"></script>
+        <script src="../../js/hoverable-collapse.js"></script>
+        <script src="../../js/template.js"></script>
+        <script src="../../js/settings.js"></script>
+        <script src="../../js/todolist.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="../../js/typeahead.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../../js/select2.js"></script>
+        <!-- End custom js for this page-->
+        <script type="module" src="./preview-score.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+1. ពិនិត្យឈ្មោះភាសាអង់គ្លេស✔️
+2. ពីនិត្យថ្នាក់ទី១០C✔️
+3. ឲ្យគ្រូបន្ទុកថា្នក់អាចមើលតារាងពិន្ទុសរុប
+4. កែសម្រួល ឆមាស /ប្រចាំឆមាស/ប្រចាំឆ្នាំ/បូកសរុប៤ខែ
+
+https://salamom-admin.web.app/studentadmin
+
+                                        <div>
+                                            <iframe src="https://salamom-admin.web.app/studentadmin" width="100%" height="100%"></iframe>
+
+                                        </div>
+https://salamom-school.web.app/pages/preview-score/preview-score-admin.html

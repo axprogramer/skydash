@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./new-employee.css">
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <img style="width: 50%;" src="http://drive.google.com/uc?export=view&id=1k3rbn7tVvLl4_Sgy2onvOAL9ggecbDOC" alt="">
+    <!-- <input type="hidden" name="teacher[subject_ids][]" id="hidden_subject_ids" /> -->
+    <div class="col-sm-10">
+        <input name="teacher[subject_ids][]" type="hidden" id="hidden_subject_ids" /><select
+            class="js-example-basic-multiple" placeholder="ជ្រើសរើសមុខវិជ្ជា" multiple="multiple"
+            name="teacher[subject_ids][]" id="teacher_subject_ids">
+            <option value="2042">
+                អក្សរផ្ចង់
+            </option>
+            <option value="2043">
+                សរសេរតាមអាន
+            </option>
+            <option value="2044">
+                អំណាន
+            </option>
+            <option value="2045">
+                តែងសេចក្តី
+            </option>
+            <option value="2046">
+                គណិតវិទ្យា
+            </option>
+            <option value="2047">
+                វិទ្យាសាស្ត្រ
+            </option>
+            <option value="2048">
+                សីលធម៌-ពលរដ្ឋវិជ្ជា
+            </option>
+            <option value="2049">
+                ភូមិវិទ្យា
+            </option>
+            <option value="2050">
+                ប្រវត្តិវិទ្យា
+            </option>
+            <option value="2051">
+                សិល្បៈ/គំនូរ
+            </option>
+            <option value="2052">
+                សិក្សាសង្គម
+            </option>
+            <option value="4153">
+                ភាសាខ្មែរ
+            </option>
+            <option value="4154">
+                អង់គ្លេស
+            </option>
+            <option value="4155">
+                កីឡា
+            </option>
+            <option value="4156">
+                សិក្សាសីលធម៌
+            </option>
+            <option value="4158">
+                សកម្មភាព
+            </option>
+        </select>
+
+        <input type="text" id="selectedSubjects" readonly>
+        <button id="selectSubjects">Select Subjects</button>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+        <div id="subjectList" style="display: none;">
+            <input type="checkbox" id="subject-math" value="math">
+            <label for="subject-math">Math</label><br>
+            <input type="checkbox" id="subject-english" value="english">
+            <label for="subject-english">English</label><br>
+            <input type="checkbox" id="subject-pe" value="pe">
+            <label for="subject-pe">PE</label>
+        </div>
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Select Subjects
+    </button>
+    <ul class="dropdown-menu dropdown-menu-lg show" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Math</a></li>
+        <li><a class="dropdown-item" href="#">English</a></li>
+        <li><a class="dropdown-item" href="#">PE</a></li>
+    </ul>
+</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <script src="../../js/select2.js"></script>
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+
+    <script>
+        // Retrieve saved subject IDs from localStorage (initialize to an empty array if not found)
+        const savedSubjectIds = JSON.parse(localStorage.getItem('teacher_subject_ids')) || [];
+
+        // Load saved subject IDs into the hidden input field
+        document.getElementById('hidden_subject_ids').value = savedSubjectIds.join(',');
+
+        // Select options in the multiple select based on saved IDs
+        const subjectSelect = document.getElementById('teacher_subject_ids');
+        savedSubjectIds.forEach(id => {
+            const option = subjectSelect.querySelector(`option[value="${id}"]`);
+            if (option) {
+                option.selected = true;
+            }
+        });
+
+        // Update localStorage when selections change
+        subjectSelect.addEventListener('change', () => {
+            const selectedOptions = Array.from(subjectSelect.selectedOptions)
+                .map(option => option.value);
+            localStorage.setItem('teacher_subject_ids', JSON.stringify(selectedOptions));
+        });
+
+        const selectedSubjectsInput = document.getElementById("selectedSubjects");
+        const subjectList = document.getElementById("subjectList");
+        const selectSubjectsButton = document.getElementById("selectSubjects");
+
+        selectSubjectsButton.addEventListener("click", () => {
+            subjectList.style.display = "block"; // Show subject list
+        });
+
+        subjectList.addEventListener("change", (event) => {
+            const checkedSubjects = [];
+            const checkboxes = subjectList.querySelectorAll("input[type='checkbox']");
+            for (const checkbox of checkboxes) {
+                if (checkbox.checked) {
+                    checkedSubjects.push(checkbox.value);
+                }
+            }
+            selectedSubjectsInput.value = checkedSubjects.join(", "); // Join selected values with comma
+        });
+
+        // Hide the subject list initially
+        subjectList.style.display = "none";
+
+    </script>
+
+    <!-- <script src="./add-new-employee.js"></script> -->
+</body>
+
+</html>

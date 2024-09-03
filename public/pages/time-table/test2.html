@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable with LocalStorage</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            border: 1px solid #ddd;
+            padding: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Grade</th>
+                <th colspan="5">Days</th>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Grade 1</td>
+                <td data-cell-id="1"></td>
+                <td data-cell-id="2"></td>
+                <td data-cell-id="3"></td>
+                <td data-cell-id="4"></td>
+                <td data-cell-id="5"></td>
+            </tr>
+            <tr>
+                <td>Grade 2</td>
+                <td data-cell-id="6"></td>
+                <td data-cell-id="7"></td>
+                <td data-cell-id="8"></td>
+                <td data-cell-id="9"></td>
+                <td data-cell-id="10"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="subject-menu" class="popup">
+        <p>Select Subject:</p>
+        <select id="subject-select">
+            <option value="">-- Select Subject --</option>
+            <option value="Math">Math</option>
+            <option value="English">English</option>
+        </select>
+    </div>
+    <div id="teacher-menu" class="popup">
+        <p>Select Teacher:</p>
+        <p id="close">Close</p>
+        <select id="teacher-select">
+            <option value="">-- Select Teacher --</option>
+            <option value="Dara">Dara</option>
+            <option value="Lisa">Lisa</option>
+        </select>
+        <button id="btn_submit">OK</button>
+    </div>
+
+    <script>
+        const subjectMenu = document.getElementById('subject-menu');
+        const teacherMenu = document.getElementById('teacher-menu');
+        const subjectSelect = document.getElementById('subject-select');
+        const teacherSelect = document.getElementById('teacher-select');
+
+        function showMenu(cell, menu) {
+            const cellRect = cell.getBoundingClientRect();
+            menu.style.display = "block";
+            menu.style.left = cellRect.left + "px";
+            menu.style.top = cellRect.bottom + "px";
+        }
+
+        function hideMenu(menu) {
+            menu.style.display = "none";
+        }
+
+        function setDetails(cell) {
+            const selectedSubject = subjectSelect.value;
+            const selectedTeacher = teacherSelect.value;
+            cell.textContent = `${selectedSubject} - ${selectedTeacher}`;
+            hideMenu(subjectMenu);
+            hideMenu(teacherMenu);
+
+            // Save data to localStorage
+            const cellId = cell.dataset.cellId;
+            localStorage.setItem(`cell-${cellId}`, cell.textContent);
+        }
+
+        function loadSchedule() {
+            for (let i = 1; i <= 10; i++) { // Adjust loop for more cells
+                const cellId = `cell-${i}`;
+                const savedData = localStorage.getItem(cellId);
+                if (savedData) {
+                    document.querySelector(`td[data-cell-id="${i}"]`).textContent = savedData;
+                }
+            }
+        }
+
+        document.getElementById('close').addEventListener('click', function (event) {
+            // const clickedCell = document.getElementById('close'); // Get clicked cell element
+            // if (!clickedCell) { // Hide menu if clicked outside a cell
+                hideMenu(subjectMenu);
+                hideMenu(teacherMenu);
+            // } 
+            
+        });
+        document.querySelectorAll('td').forEach(cell => {
+            cell.addEventListener('click', function () {
+                // Show subject menu first
+                showMenu(this, subjectMenu);
+                subjectSelect.value = ""; // Reset subject selection on click
+
+
+                // Optional: Close menu on Esc key press (if needed)
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === "Escape") {
+                        hideMenu(subjectMenu);
+                        hideMenu(teacherMenu);
+                    }
+                });
+                document.getElementById('btn_submit').addEventListener('click', () => {
+                    setDetails(cell);
+
+                })
+                // Selecting subject shows teacher menu
+                subjectSelect.addEventListener('change', function () {
+                    if (subjectSelect.value) { // Only show teacher menu if subject selected
+                        showMenu(cell, teacherMenu);
+                    }
+                });
+            });
+        });
+
+        // Call loadSchedule on page load to restore saved data
+        window.addEventListener('load', loadSchedule);
+        
+    </script>
+</body>
+
+</html>

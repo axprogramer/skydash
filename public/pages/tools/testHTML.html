@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade and Subject Selection</title>
+</head>
+
+<body>
+    <h2>Select Grade and Subject</h2>
+    <div id="selection">
+        <p><b>Grades:</b></p>
+        <input type="checkbox" id="grade1A" value="1A"> <label for="grade1A">1A</label>
+        <input type="checkbox" id="grade2A" value="2A"> <label for="grade2A">2A</label>
+        <input type="checkbox" id="grade3A" value="3A"> <label for="grade3A">3A</label>
+        <input type="checkbox" id="grade4A" value="4A"> <label for="grade4A">4A</label>
+        <p><b>Subjects:</b></p>
+        <input type="checkbox" id="subjectEnglish" value="English"> <label for="subjectEnglish">English</label>
+        <input type="checkbox" id="subjectMath" value="Math"> <label for="subjectMath">Math</label>
+        <input type="checkbox" id="subjectLiterature" value="Literature"> <label
+            for="subjectLiterature">Literature</label>
+    </div>
+    <br>
+    <p>Selected: <input type="text" id="selectedOutput" readonly></p>
+    <p>Get Value: <input type="text" id="getInput" readonly></p>
+    <p><Button id="add">Push</Button></p>
+    <script>
+        const gradeInputs = document.querySelectorAll('#selection input[type="checkbox"][id^="grade"]');
+        const subjectInputs = document.querySelectorAll('#selection input[type="checkbox"][id^="subject"]');
+        const selectedOutput = document.getElementById('selectedOutput');
+        const getInput = document.getElementById('getInput');
+        const btn = document.getElementById('add');
+
+       const input1 = document.getElementById('selectedOutput');
+        const input2 = document.getElementById('getInput');
+
+        function addSelected() {
+            let selectedValues = [];
+
+            const grades = document.querySelectorAll('input[id^="grade"]');
+            for (const grade of grades) {
+                if (grade.checked) {
+                    selectedValues.push(grade.value);
+                }
+            }
+
+            const subjects = document.querySelectorAll('input[id^="subject"]');
+            for (const subject of subjects) {
+                if (subject.checked) {
+                    selectedValues.push(subject.value);
+                }
+            }
+
+            if (selectedValues.length === 0) {
+                alert('Please select at least one grade and subject.');
+                return;
+            }
+
+            const combinedValue = selectedValues.join('-');
+
+            // Append the newly selected value to the existing input, if any
+            input1.value = input1.value ? `${input1.value} ${combinedValue}` : combinedValue;
+
+            // Clear the checkbox selections
+            grades.forEach(checkbox => checkbox.checked = false);
+            subjects.forEach(checkbox => checkbox.checked = false);
+
+            // Update input2 with the latest value from input1
+            // input2.value = input1.value;
+        }
+        btn.addEventListener('click', addSelected);
+    </script>
+</body>
+
+</html>

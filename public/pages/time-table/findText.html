@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Cell Highlighting</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .highlight {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Niv</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>love</td>
+                <td>kiss</td>
+                <td>love</td>
+                <td>love</td>
+            </tr>
+            <tr>
+                <td>kiss</td>
+                <td>kiss</td>
+                <td>kiss</td>
+                <td>love</td>
+            </tr>
+            <tr>
+                <td>me</td>
+                <td>kiss</td>
+                <td>kiss</td>
+                <td>me</td>
+            </tr>
+            <tr>
+                <td>me</td>
+                <td>me</td>
+                <td>love</td>
+                <td>love</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const table = document.getElementById('myTable');
+
+        function highlightCells(clickedCell) {
+            const rows = table.querySelectorAll('tr');
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                const cells = row.querySelectorAll('td');
+
+                for (let j = 0; j < cells.length; j++) {
+                    const currentCellValue = cells[j].textContent;
+                    if (currentCellValue === clickedCell.textContent && cells[j] !== clickedCell) {
+                        cells[j].classList.add('highlight');
+                    } else {
+                        cells[j].classList.remove('highlight');
+                    }
+                }
+            }
+        }
+
+        // Call the function after the table content is loaded (replace with your data loading logic)
+        window.addEventListener('DOMContentLoaded', highlightCells);
+        window.addEventListener('load', highlightCells);
+
+        // Add event listener for cell click to trigger highlighting
+        table.addEventListener('click', function (event) {
+            if (event.target.tagName === 'TD') { // Check if clicked element is a table cell (TD)
+                const clickedCell = event.target;
+                highlightCells(clickedCell); // Recalculate highlighting based on clicked cell
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>

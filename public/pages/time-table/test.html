@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Data Highlighting</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .highlight {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <th>N0</th>
+            <th>Grade</th>
+            <th>Time 1</th>
+            <th>Time 2</th>
+            <th>Time 3</th>
+            <th>Time 4</th>
+        </thead>
+        <tbody id="myTbody">
+            <tr id="tr1">
+                <td>1</td>
+                <td>1A</td>
+                <td>Math</td>
+                <td>Math</td>
+                <td>English</td>
+                <td>English</td>
+            </tr>
+            <tr id="tr2">
+                <td>2</td>
+                <td>1B</td>
+                <td>Math</td>
+                <td>Math</td>
+                <td>English</td>
+                <td>English</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="addRow">Add Row</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#addRow").click(function () {
+                // Get the values for the new row
+                const newGrade = prompt("Enter Grade:");
+                const newSubject1 = prompt("Enter Subject 1:");
+                const newSubject2 = prompt("Enter Subject 2:");
+
+                // Check if subjects already exist in the tbody
+                const existingSubjects = $("#myTbody td:nth-child(3), #myTbody td:nth-child(5)").text().split(" ");
+                if (existingSubjects.includes(newSubject1) || existingSubjects.includes(newSubject2)) {
+                    alert("Subject already exists in this row. Please enter unique subjects.");
+                    return; // Prevent adding the row if subjects conflict
+                }
+
+                // Create a new table row element 
+                const newRow = $("<tr></tr>");
+
+                // Add new cells with data to the row
+                newRow.append(
+                    $("<td></td>").text($("tr:last").find("td:first-child").text() + 1), // Get student number from last row and increment
+                    $("<td></td>").text(newGrade),
+                    $("<td></td>").text(newSubject1),
+                    $("<td></td>").text(newSubject2),
+                    $("<td></td>").text(""), // Placeholder for Time 3
+                    $("<td></td>").text("")  // Placeholder for Time 4
+                );
+
+                // Append the new row to the tbody
+                $("#myTbody").append(newRow);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

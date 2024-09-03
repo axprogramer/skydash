@@ -1,0 +1,46 @@
+Let's Begin
+https://drive.google.com/file/d/1VhjZ2oH54HWT6MgiyxVn3SoooBKkI_Ll/view
+
+Let's Go 1
+https://drive.google.com/file/d/1jVbCh-drRLfbkc_lbH3-6yy6KxGS_BBz/view
+
+Let's Go 2
+https://drive.google.com/file/d/1aCsJHcaF4mg2uAdh9i-qyfg__MGiKku5/view
+
+Let's Go 3
+https://drive.google.com/file/d/1SImYNR-kN0Z3aH1qIimCSCcvR-2M8pgp/view
+
+Let's Go 4
+https://drive.google.com/file/d/1FGLOCl-WV31lM8OIX2f7a487hR3-SDmc/view
+
+Let's Go 5
+https://drive.google.com/file/d/1EeGdYYhQBUbHWnHOu6HqpsGOMNfwxoEi/view
+
+Let's Go 6
+https://drive.google.com/file/d/1DSEEJBfO_bWw2orhx2G5OsLQAAB3Khim/view
+
+npm i @bildau/rn-pdf-reader
+
+npm install react-native-blob-util --save
+
+npm install @config-plugins/react-native-blob-util
+
+ដូរពណ៌ចំណងជើង ដាក់អក្សរដុត OK
+
+លុប ព្រឹក ល្ងាច OK
+
+ដាក់ពណ៌ម៉ោងលើកាលវិភាគ លេខ OK
+
+error reload OK
+
+logo កាលវិភាគ OK
+
+06/06/2024
+
+Drop name OK
+
+Upgrade class OK
+
+តារាងកិតិយស
+
+កែទិន្នន័យសិស្ស ដកចេញមួយចំនួន OK

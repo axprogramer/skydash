@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Add/Delete Table Column</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="myTable">
+        <tr>
+            <td colspan="2">Monday</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08:00-08:45</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>08:45-09:30</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>09:50-10:35</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>10:35-11:20</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12:20-01:05</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>01:05-01:50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>02:05-02:50</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>02:50-03:35</td>
+        </tr>
+        <tr>
+            <td colspan="2">Tuesday</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08:00-08:45</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>08:45-09:30</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>09:50-10:35</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>10:35-11:20</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12:20-01:05</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>01:05-01:50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>02:05-02:50</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>02:50-03:35</td>
+        </tr>
+        <tr>
+            <td colspan="2">Wednesday</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08:00-08:45</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>08:45-09:30</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>09:50-10:35</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>10:35-11:20</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12:20-01:05</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>01:05-01:50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>02:05-02:50</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>02:50-03:35</td>
+        </tr>
+        <tr>
+            <td colspan="2">Thursday</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08:00-08:45</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>08:45-09:30</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>09:50-10:35</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>10:35-11:20</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12:20-01:05</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>01:05-01:50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>02:05-02:50</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>02:50-03:35</td>
+        </tr>
+        <tr>
+            <td colspan="2">Friday</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08:00-08:45</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>08:45-09:30</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>09:50-10:35</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>10:35-11:20</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>12:20-01:05</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>01:05-01:50</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>02:05-02:50</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>02:50-03:35</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total</td>
+        </tr>
+    </table>
+    <br>
+    <button id="addColumnBtn">Add Column</button>
+    <button id="deleteColumnBtn">Delete Column</button>
+
+    <script>
+        $(document).ready(function () {
+            // Function to save table to localStorage
+            function saveTable() {
+                var tableHtml = $("#myTable").html();
+                localStorage.setItem('tableData', tableHtml);
+            }
+            // Function to load table from localStorage
+            function loadTable() {
+                var storedTable = localStorage.getItem('tableData');
+                if (storedTable) {
+                    $("#myTable").html(storedTable);
+                } 
+                // else {
+                //     // Initial table setup if nothing in localStorage
+                //     $("#myTable").html('<tr><th>Number</th><th>Name</th><th>Gender</th></tr><tr><td>1</td><td>John Doe</td><td>Male</td></tr>');
+                // }
+            }
+
+            // Load table structure from localStorage on page load
+            loadTable();
+
+            $("#addColumnBtn").click(function () {
+                var columnCount = $("#myTable tr:first th").length + 1;
+                $("#myTable tr").each(function () {
+                    $(this).append(`<td id="col${columnCount}">New Data ` + columnCount + '</td>');
+                });
+                $("#myTable tr:first").find('td:last').replaceWith(`<th contenteditable id="head${columnCount}">Teacher/Grade` + '</th>');
+                saveTable(); // Save changes to localStorage
+
+            });
+
+            $("#deleteColumnBtn").click(function () {
+                var columnCount = $("#myTable tr:first th").length;
+                if (columnCount > 1) {
+                    $("#myTable tr").find('th:last, td:last').remove();
+                } else {
+                    alert("Cannot delete the last column.");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

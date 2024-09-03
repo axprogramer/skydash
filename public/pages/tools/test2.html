@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Wrappable Text</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1 (Long Text)</th>
+                <th>Header 2 (More Text)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="cell1">This is some long text that may wrap across multiple lines when displayed in the table
+                    cell.</td>
+                <td id="cell2">Another example of text that could potentially wrap due to its length.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        const cell1 = document.getElementById('cell1');
+        const cell2 = document.getElementById('cell2');
+
+        cell1.style.whiteSpace = 'normal';
+        cell2.style.whiteSpace = 'normal';
+
+
+    </script>
+</body>
+
+</html>

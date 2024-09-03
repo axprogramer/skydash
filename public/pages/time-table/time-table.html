@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>កាលវិភាគសិក្សា</title>
+    <!-- plugins:css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="./add-css.css">
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <!-- <link rel="stylesheet" href="./add-css.css"> -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../../fonts/Siemreap.ttf">
+    <!-- endinject -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="shortcut icon" href="../../images/SalaMOMLogo.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row myKh">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/SalaMOMLogo.png"
+                        class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/SalaMOMLogo.png"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-lg-block">
+                        <div class="input-group">
+                            <select class="form-control text-center" style="color: black;line-height: 2; padding: 8px;"
+                                id="sle_lvl">
+                                <option>ជ្រើសរើសកម្រិត</option>
+                                <option value="primary_class">បឋមសិក្សា</option>
+                                <option value="secondary_class">មធ្យមសិក្សា</option>
+                            </select>
+
+                        </div>
+                    </li>
+                    <li class="nav-item nav-search d-lg-block">
+                        <div class="input-group">
+                            <select class="form-control text-center" style="color: black;line-height: 2; padding: 8px;"
+                                id="sle_year">
+                                <option>ជ្រើសរើសឆ្នាំសិក្សា</option>
+                            </select>
+
+                        </div>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img id="user_img"
+                                src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper myKh">
+            <!-- partial:../../partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">SIDEBAR SKINS</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+                    </div>
+                    <p class="settings-heading mt-2">HEADER SKINS</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas myKh" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-student/new-students.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានផ្ទាល់ខ្លួនសិស្ស</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-employee/new-employee.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានបុគ្គលិក</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="mdi mdi-brightness-7 menu-icon"></i>
+                            <span class="menu-title">កំណត់ទូទៅ</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="../tools/add-tools.html">កំណត់</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="./new-account.html">បង្កើតគណនីបុគ្គលិក</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- បញ្ចូលកាលវិភាគសិក្សា -->
+                            <div class="card card-primary card-outline">
+                                <div class="card-body">
+                                    <div class="card">
+
+                                        <div class="content" id="time_tables">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <h4 class="card-title text-center">កាលវិភាគបង្រៀនថ្នាក់បឋមសិក្សា
+                                                    </h4>
+                                                    <div class="col-lg-12">
+
+
+                                                        <div class="card ">
+                                                            <table>
+                                                                <tr>
+                                                                    <td class="text-start">Kosal, Primary Teacher
+                                                                        (2023-2024)</td>
+                                                                    <td class="text-center">Grade 1- Grade 6</td>
+                                                                    <td class="text-end">Issue date 12 / 01 /2024</td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- <h5 class="mb-0 table-title">កាលវិភាគរួមប្រចាំសប្តាហ៍</h5> -->
+                                                            <div class="table-fixed-top-left" id="show_mouse">
+                                                                <table id="my_table">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th rowspan="3">ល.រ
+                                                                            </th>
+                                                                            <th rowspan="3">
+                                                                                ថ្នាក់</th>
+                                                                            <th rowspan="3">
+                                                                                បន្ទប់</th>
+                                                                            <td colspan="8">
+                                                                                ច័ន្ទ
+                                                                            </td>
+                                                                            <td colspan="8">
+                                                                                អង្គារ
+                                                                            </td>
+                                                                            <td colspan="8">
+                                                                                ពុធ
+                                                                            </td>
+                                                                            <td colspan="8">
+                                                                                ព្រហស្បតិ៍
+                                                                            </td>
+                                                                            <td colspan="8">
+                                                                                សុក្រ
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td colspan="4">
+                                                                                ព្រឹក
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ល្ងាច
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ព្រឹក
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ល្ងាច
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ព្រឹក
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ល្ងាច
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ព្រឹក
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ល្ងាច
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ព្រឹក
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                ល្ងាច
+                                                                            </td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="am">1
+                                                                            </td>
+                                                                            <td class="am">2
+                                                                            </td>
+                                                                            <td class="am">3
+                                                                            </td>
+                                                                            <td class="am">4
+                                                                            </td>
+                                                                            <td class="pm">1
+                                                                            </td>
+                                                                            <td class="pm">2
+                                                                            </td>
+                                                                            <td class="pm">3
+                                                                            </td>
+                                                                            <td class="pm">4
+                                                                            </td>
+                                                                            <td class="am">1
+                                                                            </td>
+                                                                            <td class="am">2
+                                                                            </td>
+                                                                            <td class="am">3
+                                                                            </td>
+                                                                            <td class="am">4
+                                                                            </td>
+                                                                            <td class="pm">1
+                                                                            </td>
+                                                                            <td class="pm">2
+                                                                            </td>
+                                                                            <td class="pm">3
+                                                                            </td>
+                                                                            <td class="pm">4
+                                                                            </td>
+                                                                            <td class="am">1
+                                                                            </td>
+                                                                            <td class="am">2
+                                                                            </td>
+                                                                            <td class="am">3
+                                                                            </td>
+                                                                            <td class="am">4
+                                                                            </td>
+                                                                            <td class="pm">1
+                                                                            </td>
+                                                                            <td class="pm">2
+                                                                            </td>
+                                                                            <td class="pm">3
+                                                                            </td>
+                                                                            <td class="pm">4
+                                                                            </td>
+                                                                            <td class="am">1
+                                                                            </td>
+                                                                            <td class="am">2
+                                                                            </td>
+                                                                            <td class="am">3
+                                                                            </td>
+                                                                            <td class="am">4
+                                                                            </td>
+                                                                            <td class="pm">1
+                                                                            </td>
+                                                                            <td class="pm">2
+                                                                            </td>
+                                                                            <td class="pm">3
+                                                                            </td>
+                                                                            <td class="pm">4
+                                                                            </td>
+                                                                            <td class="am">1
+                                                                            </td>
+                                                                            <td class="am">2
+                                                                            </td>
+                                                                            <td class="am">3
+                                                                            </td>
+                                                                            <td class="am">4
+                                                                            </td>
+                                                                            <td class="pm">1
+                                                                            </td>
+                                                                            <td class="pm">2
+                                                                            </td>
+                                                                            <td class="pm">3
+                                                                            </td>
+                                                                            <td class="pm">4
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="tbody_time_table">
+
+                                                                    </tbody>
+                                                                </table>
+                                                                <!-- Modal -->
+                                                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                                    aria-labelledby="exampleModalLabel"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <!-- <div class="modal-header">
+                                                                                <h5 class="modal-title"
+                                                                                    id="exampleModalLabel">
+                                                                                    កាលវិភាគសិក្សា
+                                                                                </h5>
+
+                                                                            </div> -->
+                                                                            <div class="modal-body">
+                                                                                <p>
+                                                                                <div class="input-group mb-3">
+                                                                                    <div class="dropdown"
+                                                                                        style="border: 1px solid #0000002d;background-color: rgba(88, 87, 87, 0.075);">
+                                                                                        <button
+                                                                                            class="btn dropdown-toggle"
+                                                                                            type="button"
+                                                                                            id="dropdownMenuName"
+                                                                                            data-bs-toggle="dropdown"
+                                                                                            aria-expanded="false">
+                                                                                            ឈ្មោះបុគ្គលិក
+                                                                                        </button>
+                                                                                        <ul class="dropdown-menu menu-lg-scroll dropdown-content"
+                                                                                            aria-labelledby="dropdownMenuName"
+                                                                                            id="select_username">
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <input class="form-control"
+                                                                                        type="text" value=""
+                                                                                        placeholder="ឈ្មោះបុគ្គលិក"
+                                                                                        onkeyup="this.value = this.value.toLowerCase()"
+                                                                                        id="user_teacher_id"
+                                                                                        aria-describedby="dropdownMenuName" />
+                                                                                </div>
+                                                                                <input class="form-control"
+                                                                                    type="hidden" value=""
+                                                                                    onkeyup="this.value = this.value.toLowerCase()"
+                                                                                    id="user_url" />
+                                                                                <input class="form-control"
+                                                                                    type="hidden" value=""
+                                                                                    id="user_nickname" />
+
+                                                                                </p>
+                                                                                <div class="input-group mb-3">
+                                                                                    <span class="input-group-text"
+                                                                                        id="basic-addon2">មុខវិជ្ជា</span>
+                                                                                    <select
+                                                                                        class="form-control text-center"
+                                                                                        aria-describedby="basic-addon2"
+                                                                                        style="color: black;line-height: 2; padding: 8px;"
+                                                                                        id="select_sub">
+                                                                                        <option>ជ្រើសរើសមុខវិជ្ជា
+                                                                                        </option>
+                                                                                    </select>
+
+                                                                                </div>
+
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <div class="text-center" id="save_btn">
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div id="subject-menu" class="popup">
+                                                                    <p>Select Subject:</p>
+                                                                    <select id="subject-select">
+                                                                        <option value="">-- Select Subject --</option>
+                                                                        <option value="M">Math</option>
+                                                                        <option value="K">Khmer</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div id="teacher-menu" class="popup">
+                                                                    <p>Select Grade:</p>
+                                                                    <p id="close">Close</p>
+                                                                    <select id="teacher-select">
+                                                                        <option value="">-- Select Teacher --</option>
+                                                                        <option value="1A">1A</option>
+                                                                        <option value="2A">2A</option>
+                                                                        <option value="3A">3A</option>
+                                                                        <option value="4A">4A</option>
+                                                                        <option value="1B">1B</option>
+                                                                        <option value="2B">2B</option>
+                                                                        <option value="3B">3B</option>
+                                                                        <option value="4B">4B</option>
+                                                                    </select>
+                                                                    <button id="btn_submit">OK</button>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- បង្ហាញកាលវិភាគតាមឈ្មោះគ្រូ -->
+                            <div class="card card-primary card-outline">
+                                <div class="card-body">
+                                    <div class="card">
+
+                                        <div class="content" id="time_tables">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <h4 class="card-title text-center">កាលវិភាគបង្រៀនថ្នាក់បឋមសិក្សា
+                                                    </h4>
+                                                    <div class="col-lg-12">
+                                                        <div class="table-fixed-top-left" id="show_mouse">
+                                                            <table id="myTable">
+                                                                <thead>
+                                                                    <tr id="head1">
+                                                                        <th colspan="2">Teacher/Grade</th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="add_row">
+                                                                    <tr>
+                                                                        <td colspan="2">Monday</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>08:00-08:45</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>08:45-09:30</td>
+
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>09:50-10:35</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>10:35-11:20</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>12:20-01:05</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>01:05-01:50</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>02:05-02:50</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>02:50-03:35</td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">Tuesday</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>08:00-08:45</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>08:45-09:30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>09:50-10:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>10:35-11:20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>12:20-01:05</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>01:05-01:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>02:05-02:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>02:50-03:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">Wednesday</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>08:00-08:45</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>08:45-09:30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>09:50-10:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>10:35-11:20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>12:20-01:05</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>01:05-01:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>02:05-02:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>02:50-03:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">Thursday</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>08:00-08:45</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>08:45-09:30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>09:50-10:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>10:35-11:20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>12:20-01:05</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>01:05-01:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>02:05-02:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>02:50-03:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">Friday</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>08:00-08:45</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>08:45-09:30</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>09:50-10:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>10:35-11:20</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>12:20-01:05</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>2</td>
+                                                                        <td>01:05-01:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>3</td>
+                                                                        <td>02:05-02:50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>4</td>
+                                                                        <td>02:50-03:35</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="2">Total</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <div id="subject-menu" class="popup">
+                                                                <p>Select Subject:</p>
+                                                                <select id="subject-select">
+                                                                    <option value="">-- Select Subject --</option>
+                                                                    <option value="M">Math</option>
+                                                                    <option value="K">Khmer</option>
+                                                                </select>
+                                                            </div>
+                                                            <div id="teacher-menu" class="popup">
+                                                                <p>Select Grade:</p>
+                                                                <p id="close">Close</p>
+                                                                <select id="teacher-select">
+                                                                    <option value="">-- Select Teacher --</option>
+                                                                    <option value="1A">1A</option>
+                                                                    <option value="2A">2A</option>
+                                                                    <option value="3A">3A</option>
+                                                                    <option value="4A">4A</option>
+                                                                    <option value="1B">1B</option>
+                                                                    <option value="2B">2B</option>
+                                                                    <option value="3B">3B</option>
+                                                                    <option value="4B">4B</option>
+                                                                </select>
+                                                                <button id="btn_submit">OK</button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- For Preview Printing -->
+                <div class="modal fade" id="forPreview" tabindex="-1" aria-labelledby="forPrinting" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <div id="report-grade-time-table" class="report-container ">
+
+                                            <table class="table table-bordered grade-timetable">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row" colspan="8" class="text-center time-shit">
+                                                            ពេលព្រឹក</th>
+                                                    </tr>
+
+                                                    <tr class="time-header">
+                                                        <th scope="col" class="time-table-time-col time">ម៉ោង</th>
+                                                        <th scope="col" class="day">ច័ន្ទ</th>
+                                                        <th scope="col" class="day">អង្គារ</th>
+                                                        <th scope="col" class="day">ពុធ</th>
+                                                        <th scope="col" class="day">ព្រហស្បតិ៍</th>
+                                                        <th scope="col" class="day">សុក្រ</th>
+                                                    </tr>
+
+
+                                                    <tr id="time1">
+                                                        <th scope="row" class="text-center"> <span id="t1_s"></span>
+                                                            <span class="merindiem1"></span> - <span id="t1_e"></span>
+                                                            <span class="merindiem2"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_mor_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_mor_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_mor_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_mor_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_mor_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_mor_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_mor_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_mor_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_mor_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_mor_t1" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time2">
+                                                        <th scope="row" class="text-center"> <span id="t2_s"></span>
+                                                            <span class="merindiem3"></span> - <span id="t2_e"></span>
+                                                            <span class="merindiem4"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_mor_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_mor_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_mor_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_mor_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_mor_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_mor_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_mor_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_mor_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_mor_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_mor_t2" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="break1">
+                                                        <th scope="row" class="time-table-time-col text-center"><span
+                                                                id="b1_s"></span> <span class="merindiem5"></span> -
+                                                            <span id="b1_e"></span> <span class="merindiem6"></span>
+                                                        </th>
+                                                        <td colspan="7" class="text-center break-time">
+
+                                                            <span id="k1"></span> <span id="minu1"></span> នាទី
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time3">
+                                                        <th scope="row" class="text-center"> <span id="t3_s"></span>
+                                                            <span class="merindiem7"></span> - <span id="t3_e"></span>
+                                                            <span class="merindiem8"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_mor_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_mor_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_mor_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_mor_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_mor_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_mor_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_mor_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_mor_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_mor_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_mor_t3" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time4">
+                                                        <th scope="row" class="text-center"> <span id="t4_s"></span>
+                                                            <span class="merindiem9"></span> - <span id="t4_e"></span>
+                                                            <span class="merindiem10"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_mor_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_mor_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_mor_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_mor_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_mor_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_mor_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_mor_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_mor_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_mor_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_mor_t4" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+
+                                                    <tr>
+                                                        <th scope="row" colspan="8" class="text-center time-shit">
+                                                            ពេលរសៀល</th>
+                                                    </tr>
+
+                                                    <tr class="time-header">
+                                                        <th scope="col" class="time-table-time-col time">ម៉ោង</th>
+                                                        <th scope="col" class="day">ច័ន្ទ</th>
+                                                        <th scope="col" class="day">អង្គារ</th>
+                                                        <th scope="col" class="day">ពុធ</th>
+                                                        <th scope="col" class="day">ព្រហស្បតិ៍</th>
+                                                        <th scope="col" class="day">សុក្រ</th>
+                                                    </tr>
+
+
+                                                    <tr id="time5">
+                                                        <th scope="row" class="text-center"> <span id="t5_s"></span>
+                                                            <span class="merindiem11"></span> - <span id="t5_e"></span>
+                                                            <span class="merindiem12"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_aft_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_aft_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_aft_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_aft_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_aft_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_aft_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_aft_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_aft_t1" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_aft_t1" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_aft_t1" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time6">
+                                                        <th scope="row" class="text-center"> <span id="t6_s"></span>
+                                                            <span class="merindiem13"></span> - <span id="t6_e"></span>
+                                                            <span class="merindiem14"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_aft_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_aft_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_aft_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_aft_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_aft_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_aft_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_aft_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_aft_t2" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_aft_t2" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_aft_t2" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="break2">
+                                                        <th scope="row" class="time-table-time-col text-center"><span
+                                                                id="b2_s"></span> <span class="merindiem15"></span> -
+                                                            <span id="b2_e"></span> <span class="merindiem16"></span>
+                                                        </th>
+                                                        <td colspan="7" class="text-center break-time">
+
+                                                            <span id="k2"></span> <span id="minu2"></span> នាទី
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time7">
+                                                        <th scope="row" class="text-center"> <span id="t7_s"></span>
+                                                            <span class="merindiem17"></span> - <span id="t7_e"></span>
+                                                            <span class="merindiem18"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_aft_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_aft_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_aft_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_aft_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_aft_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_aft_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_aft_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_aft_t3" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_aft_t3" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_aft_t3" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr id="time8">
+                                                        <th scope="row" class="text-center"> <span id="t8_s"></span>
+                                                            <span class="merindiem19"></span> - <span id="t8_e"></span>
+                                                            <span class="merindiem20"></span>
+                                                        </th>
+                                                        <td class="text-center">
+                                                            <div id="sb_mon_aft_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_mon_aft_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_tue_aft_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_tue_aft_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_wed_aft_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_wed_aft_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_thu_aft_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_thu_aft_t4" class="text-primary"></div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div id="sb_fri_aft_t4" class="text-danger"></div>
+                                                            <br>
+                                                            <div id="tn_fri_aft_t4" class="text-primary"></div>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                            <table class="w-100">
+                                                <tbody>
+                                                    <tr style="vertical-align: top;">
+                                                        <td style="width: 65%;">
+                                                            <div class="mb-2">
+                                                                ◆ គ្រូបន្ទុកថ្នាក់<b
+                                                                    class="ml-1 homeroom-teacher-name">ឌិន ស្រីណាង</b>
+                                                                <div>
+                                                                    <table>
+                                                                        <tbody class="mytr" id="subjectCounts">
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">Printing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            All rights reserved.</span>
+
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- <script src="./tools-js.js"></script> -->
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../js/typeahead.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../js/select2.js"></script>
+    <!-- End custom js for this page-->
+    <script src="./time-table.js"></script>
+</body>
+
+</html>

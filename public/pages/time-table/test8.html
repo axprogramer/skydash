@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Table with Firebase</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include Firebase library -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="myTable">
+        <tr>
+            <th>Teacher/Grade</th>
+        </tr>
+        <tr>
+            <th>Monday</th>
+        </tr>
+        <tr>
+            <th>1</th>
+        </tr>
+        <tr>
+            <th>2</th>
+        </tr>
+        <!-- Table data will be loaded here -->
+    </table>
+    <br>
+    <button id="addColumnBtn">Add Column</button>
+    <button id="deleteColumnBtn">Delete Column</button>
+
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDn5l50utUfCEBpWEYX_lQO5Ar3OB0WAmc",
+            authDomain: "salamom-d3246.firebaseapp.com",
+            databaseURL: "https://salamom-d3246-default-rtdb.firebaseio.com",
+            projectId: "salamom-d3246",
+            storageBucket: "salamom-d3246.appspot.com",
+            messagingSenderId: "521352537338",
+            appId: "1:521352537338:web:fbccf858c76c4a843d1543"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+        // Function to update table structure in Firebase
+        function updateFirebaseTableStructure() {
+            var tableStructure = [];
+            $("#myTable th").each(function () {
+                tableStructure.push($(this).text());
+            });
+            database.ref('tableStructure').set(tableStructure);
+        }
+
+        // Load table structure from Firebase
+        database.ref('tableStructure').once('value', function (snapshot) {
+            if (snapshot.exists()) {
+                var columns = snapshot.val();
+                var headerRow = '<tr>';
+                $.each(columns, function (index, column) {
+                    headerRow += '<td>' + column + '</td>';
+                });
+                headerRow += '</tr>';
+                $("#myTable").html(headerRow);
+            }
+        });
+
+        // Add column functionality
+        $("#addColumnBtn").click(function () {
+            var columnCount = $("#myTable tr:first th").length + 1;
+            $("#myTable tr").append(`<th id="${columnCount}" contenteditable>` + '</th>');
+            updateFirebaseTableStructure(); // Update Firebase
+        });
+
+        // Delete column functionality
+        $("#deleteColumnBtn").click(function () {
+            var columnCount = $("#myTable tr:first th").length;
+            if (columnCount > 1) {
+                $("#myTable tr").find('th:last').remove();
+                updateFirebaseTableStructure(); // Update Firebase
+            } else {
+                alert("Cannot delete the last column.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

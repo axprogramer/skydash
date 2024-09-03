@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Table with Local Storage</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+            <tr>
+                <td><input type="text" id="inputValue"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="saveButton">Save</button>
+    <script>
+        const inputField = document.getElementById('inputValue');
+            const saveButton = document.getElementById('saveButton');
+            const tableBody = document.getElementById('tableData');
+
+            // Function to retrieve data from localStorage
+            function getSavedValue() {
+                return localStorage.getItem('tableData');
+            }
+
+            // Function to update table cell with input value
+            function updateTableCell() {
+                const valueCell = tableBody.querySelector('td:nth-child(2)');
+                valueCell.textContent = inputField.value;
+            }
+
+            // Function to save input value to localStorage
+            function saveValue() {
+                const dataToSave = inputField.value;
+                localStorage.setItem('tableData', dataToSave);
+                updateTableCell();
+            }
+
+            // Check for saved data on page load and display it
+            const savedData = getSavedValue();
+            if (savedData) {
+                inputField.value = savedData;
+                updateTableCell();
+            }
+
+            // Add event listener to save button
+            saveButton.addEventListener('click', saveValue);
+
+    </script>
+</body>
+
+</html>

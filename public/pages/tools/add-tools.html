@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>កំណត់</title>
+    <!-- plugins:css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <!-- <link rel="stylesheet" href="./add-css.css"> -->
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../../fonts/Siemreap.ttf">
+    <!-- endinject -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <link rel="shortcut icon" href="../../images/SalaMOMLogo.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row myKh">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="../../index.html"><img src="../../images/SalaMOMLogo.png"
+                        class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="../../images/SalaMOMLogo.png"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img id="user_img"
+                                src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" id="user_logout">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper myKh">
+            <!-- partial:../../partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">SIDEBAR SKINS</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+                    </div>
+                    <p class="settings-heading mt-2">HEADER SKINS</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas myKh" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-student/new-students.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានផ្ទាល់ខ្លួនសិស្ស</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-employee/new-employee.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានបុគ្គលិក</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../preview-score/preview-score.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">របាយការណ៍ពិន្ទុ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">កាលវិភាគសិក្សា</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="mdi mdi-brightness-7 menu-icon"></i>
+                            <span class="menu-title">កំណត់ទូទៅ</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="../tools/add-tools.html">កំណត់</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="../tools/new-account.html">បង្កើតគណនីបុគ្គលិក</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- កំណត់ខែបញ្ចូលពិន្ទុ -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">កំណត់ខែបញ្ចូលពិន្ទុ</h4>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-center">
+                                        <div class="row">
+                                            <table class="table table-borderless border-0">
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-group text-center">
+                                                            <select class="form-select" id="sle_status"
+                                                                style="color: black;font-size: 13px;line-height: 2;">
+                                                                <option>ជ្រើសរើសស្ថានភាព</option>
+                                                                <option value="active">កំពុងដំណើរការ</option>
+                                                                <option value="pending">ផ្អាក</option>
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <button class="btn dropdown-toggle fw-bold" type="button"
+                                                                id="dropdownMenuButton3" data-bs-toggle="dropdown"
+                                                                aria-expanded="false">
+                                                                ជ្រើសរើសខែ
+                                                            </button>
+                                                            <ul class="dropdown-menu menu-lg-scroll"
+                                                                style="color: black; line-height: 2;"
+                                                                aria-labelledby="dropdownMenuButton3"
+                                                                id="sle_add_month">
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="October">
+                                                                        <label for="month-math">តុលា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="November">
+                                                                        <label for="month-math">វិច្ឆិកា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="December">
+                                                                        <label for="month-math">ធ្នូ</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="January">
+                                                                        <label for="month-math">មករា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="February">
+                                                                        <label for="month-math">កុម្ភៈ</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="March">
+                                                                        <label for="month-math">មីនា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="April-May">
+                                                                        <label
+                                                                            for="month-math">មេសា-ឧសភា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="June">
+                                                                        <label for="month-math">មិថុនា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="July">
+                                                                        <label for="month-math">កក្កដា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="August">
+                                                                        <label for="month-math">សីហា</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="1st Semester">
+                                                                        <label for="month-math">ឆមាសទី១</label><br></a>
+                                                                </li>
+                                                                <li><a class="dropdown-item"><input type="checkbox"
+                                                                            id="month-math" value="2nd Semester">
+                                                                        <label for="month-math">ឆមាសទី២</label><br></a>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button id="push_month" type="button"
+                                                            class="btn btn-success btn-sm">
+                                                            <i class="mdi mdi-library-plus"></i> បញ្ចូល
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div style="padding: 20px;">
+                                                <input autocomplete="off" style="color: black; line-height: 2;"
+                                                    class="form-control" type="text" id="show_add_month" />
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; padding: 15px;scrollbar-width: none;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">ខែអនុញ្ញាត</td>
+                                                    <td class="border-dark text-center">បច្ចុប្បន្នភាព</td>
+                                                    <td class="border-dark text-center">លុប</td>
+                                                </tr>
+                                            <tbody id="allow_month" class="border-dark ">
+
+                                            </tbody>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="score_permitted" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">កំណត់ខែបញ្ចូលពិន្ទុ</h4>
+                                                <p class="card-description">
+                                                    (Add New Subjects)
+                                                </p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success alert-dismissible fade show hidden"
+                                                    role="alert">
+                                                    <strong id="textA1">បានបញ្ចូល!</strong>
+                                                    <p id="textA2">ព័ត៍មានបានបញ្ចូលត្រឹមត្រូវ។</p>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold fw-bold">មុខវិជ្ជាជាភាសារខ្មែរ</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subKh" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold">មុខវិជ្ជាជាភាសារអង់គ្លេស</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subEn" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 fw-bold">អក្សរកាត់</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subAbr" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btnAdd"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">បញ្ចូល</button>
+                                                    <button id="btnUpdate"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- បង្កើតមុខវិជ្ជាថ្មី -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">បង្កើតមុខវិជ្ជាថ្មី</h4>
+                                    <p class="card-description">
+                                        Create New Subjects
+                                    </p>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-end">
+                                        <button id="addNew" type="button" class="btn btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#add_subs">
+                                            <i class="mdi mdi-library-plus"></i> បង្កើតថ្មី
+                                        </button>
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; padding: 15px;height: 25rem; scrollbar-width: none;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">មុខវិជ្ជាជាភាសារខ្មែរ</td>
+                                                    <td class="border-dark text-center">មុខវិជ្ជាជាភាសារអង់គ្លេស</td>
+                                                    <td class="border-dark text-center">អក្សរកាត់</td>
+                                                </tr>
+                                            <tbody id="showSubjects" class="border-dark ">
+
+                                            </tbody>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_subs" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">បង្កើតមុខវិជ្ជា</h4>
+                                                <p class="card-description">
+                                                    (Add New Subjects)
+                                                </p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success alert-dismissible fade show hidden"
+                                                    role="alert">
+                                                    <strong id="textA1">បានបញ្ចូល!</strong>
+                                                    <p id="textA2">ព័ត៍មានបានបញ្ចូលត្រឹមត្រូវ។</p>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold fw-bold">មុខវិជ្ជាជាភាសារខ្មែរ</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subKh" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold">មុខវិជ្ជាជាភាសារអង់គ្លេស</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subEn" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 fw-bold">អក្សរកាត់</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="subAbr" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btnAdd"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">បញ្ចូល</button>
+                                                    <button id="btnUpdate"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- បង្កើតថ្នាក់ថ្មី -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">បង្កើតថ្នាក់ថ្មី</h4>
+                                    <p class="card-description">
+                                        Create New Classes
+                                    </p>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-end">
+                                        <button id="addNewClass" type="button" class="btn btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#add_class">
+                                            <i class="mdi mdi-library-plus"></i> បង្កើតថ្មី
+                                        </button>
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; padding: 15px;height: 25rem; scrollbar-width: none;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">ថ្នាក់ជាភាសារខ្មែរ</td>
+                                                    <td class="border-dark text-center">ថ្នាក់ជាភាសារអង់គ្លេស</td>
+                                                </tr>
+                                            <tbody id="showClasses" class="border-dark ">
+
+                                            </tbody>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_class" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">បង្កើតថ្នាក់</h4>
+                                                <p class="card-description">
+                                                    (Add New Classes)
+                                                </p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success alert-dismissible fade show hidden"
+                                                    role="alert">
+                                                    <strong id="textA3">បានបញ្ចូល!</strong>
+                                                    <p id="textA4">ព័ត៍មានបានបញ្ចូលត្រឹមត្រូវ។</p>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="row">
+                                                    <!-- <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold fw-bold">កម្រិតថ្នាក់</label>
+                                                            <div class="col-sm-9">
+                                                                <select class="form-control"
+                                                                    style="color: black;line-height: 2;" id="user_level">
+                                                                    <option>
+                                                                        ជ្រើសរើសកម្រិតថ្នាក់
+                                                                    </option>
+                                                                    <option value="បឋមសិក្សា">
+                                                                        បឋមសិក្សា
+                                                                    </option>
+                                                                    <option value="អនុវិទ្យាល័យ">
+                                                                        អនុវិទ្យាល័យ
+                                                                    </option>
+                                                                    <option value="វិទ្យាល័យ">
+                                                                        វិទ្យាល័យ
+                                                                    </option>
+                                                                    
+                                                                </select>
+
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold fw-bold">ថ្នាក់ជាភាសារខ្មែរ</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="clKh" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold">ថ្នាក់ជាភាសារអង់គ្លេស</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="clEn" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btnAdd_class_primary"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">បឋមសិក្សា</button>
+                                                    <button id="btnUpdate_class_primary"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete_class_primary"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+
+                                                    <button id="btnAdd_class_secondary"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">អនុវិទ្យាល័យ</button>
+                                                    <button id="btnUpdate_class_secondary"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete_class_secondary"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+
+                                                    <button id="btnAdd_class_highschool"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">វិទ្យាល័យ</button>
+                                                    <button id="btnUpdate_class_highschool"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete_class_highschool"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- បង្កើតថ្នាក់ថ្មី -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">បង្កើតឆ្នាំសិក្សាថ្មី</h4>
+                                    <p class="card-description">
+                                        Create New Acdamic Year
+                                    </p>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-end">
+                                        <button id="addNewYear" type="button" class="btn btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#add_year">
+                                            <i class="mdi mdi-library-plus"></i> បង្កើតថ្មី
+                                        </button>
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; padding: 15px;height: 25rem; scrollbar-width: none;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">ឆ្នាំសិក្សាភាសារខ្មែរ</td>
+                                                    <td class="border-dark text-center">ឆ្នាំសិក្សាភាសារអង់គ្លេស</td>
+                                                </tr>
+                                            <tbody id="showYear" class="border-dark ">
+
+                                            </tbody>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_year" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">បង្កើតថ្នាក់</h4>
+                                                <p class="card-description">
+                                                    (Add New Classes)
+                                                </p>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success alert-dismissible fade show hidden"
+                                                    role="alert">
+                                                    <strong id="textA5">បានបញ្ចូល!</strong>
+                                                    <p id="textA6">ព័ត៍មានបានបញ្ចូលត្រឹមត្រូវ។</p>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold fw-bold">ឆ្នាំសិក្សាភាសារខ្មែរ</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="yearKh" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label
+                                                                class="col-sm-3 fw-bold">ឆ្នាំសិក្សាភាសារអង់គ្លេស</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" id="yearEn" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btnAdd_year"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">បញ្ចូល</button>
+                                                    <button id="btnUpdate_year"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete_year"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <!-- បង្កើតថ្នាក់ថ្មី -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">បង្កើតម៉ោងសិក្សា</h4>
+                                    <p class="card-description">
+                                        Create New Times
+                                    </p>
+                                    <!-- Button trigger modal -->
+                                    <div class="text-end">
+                                        <button id="addNewtime" type="button" class="btn btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#add_time">
+                                            <i class="mdi mdi-library-plus"></i> បង្កើតថ្មី
+                                        </button>
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; padding: 15px;height: 25rem; scrollbar-width: none;">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">ប្រភេទម៉ោង</td>
+                                                    <td class="border-dark text-center">ម៉ោងផ្តើម</td>
+                                                    <td class="border-dark text-center">ម៉ោងបញ្ចប់</td>
+                                                    <td class="border-dark text-center">វេន</td>
+                                                    <td class="border-dark text-center">ប្រភេទ</td>
+                                                </tr>
+                                            <tbody id="showTimes" class="border-dark ">
+
+                                            </tbody>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_time" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">បង្កើតម៉ោងសិក្សា</h4>
+                                                <p class="card-description">
+                                                    (Add New Times)
+                                                </p>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="alert alert-success alert-dismissible fade show hidden"
+                                                    role="alert">
+                                                    <strong id="textA7">បានបញ្ចូល!</strong>
+                                                    <p id="textA8">ព័ត៍មានបានបញ្ចូលត្រឹមត្រូវ។</p>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <label for="selectTime">ប្រភេទម៉ោង</label>
+                                                                <select class="form-select" id="selectTime"
+                                                                    style="color: black;font-size: 13px;line-height: 2;">
+                                                                    <option value="ម៉ោងទី១">ម៉ោងទី១</option>
+                                                                    <option value="ម៉ោងទី២">ម៉ោងទី២</option>
+                                                                    <option value="ម៉ោងទី៣">ម៉ោងទី៣</option>
+                                                                    <option value="ម៉ោងទី៤">ម៉ោងទី៤</option>
+                                                                    <option value="ម៉ោងទី៥">ម៉ោងទី៥</option>
+                                                                    <option value="ម៉ោងទី៦">ម៉ោងទី៦</option>
+                                                                    <option value="ម៉ោងទី៧">ម៉ោងទី៧</option>
+                                                                    <option value="ម៉ោងទី៨">ម៉ោងទី៨</option>
+                                                                    <option value="ម៉ោងចេញលេងទី១">ម៉ោងចេញលេងទី១</option>
+                                                                    <option value="ម៉ោងចេញលេងទី២">ម៉ោងចេញលេងទី២</option>
+                                                                    <option value="ម៉ោងសម្រាក">ម៉ោងសម្រាក</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="col-md-4">
+                                                                    <input placeholder="ផ្តើម" autocomplete="off"
+                                                                        style="color: black;" class="form-control"
+                                                                        required type="time"
+                                                                        name="time_setting[start_at]"
+                                                                        id="time_setting_start_at" />
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <input placeholder="បញ្ចប់" autocomplete="off"
+                                                                        style="color: black;" class="form-control"
+                                                                        required type="time" name="time_setting[end_at]"
+                                                                        id="time_setting_end_at" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <label for="time_setting_meridiem">វេន</label>
+                                                                <select class="form-select" id="time_setting_meridiem"
+                                                                    style="color: black;font-size: 13px;line-height: 2;">
+                                                                    <option value="ព្រឹក">ព្រឹក</option>
+                                                                    <option value="ល្ងាច">ល្ងាច</option>
+                                                                </select>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-10">
+                                                            <div class="form-group">
+                                                                <label for="time_setting_kind">ប្រភេទ</label>
+                                                                <select class="form-select" id="time_setting_kind"
+                                                                    style="color: black;font-size: 13px;line-height: 2;">
+                                                                    <option value="សិក្សា">សិក្សា</option>
+                                                                    <option value="ចេញលេង">ចេញលេង</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button id="btnAdd_time"
+                                                        class="btn btn-success btn-rounded btn-fw btn-sm">បញ្ចូល</button>
+                                                    <button id="btnUpdate_time"
+                                                        class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                    <button id="btnDelete_time"
+                                                        class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            All rights reserved.</span>
+
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- <script src="./tools-js.js"></script> -->
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../../js/typeahead.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../js/select2.js"></script>
+    <!-- End custom js for this page-->
+    <script src="./tools.js"></script>
+</body>
+
+</html>

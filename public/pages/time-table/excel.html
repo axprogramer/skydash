@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save to Excel</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        #download-button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="my-data">
+        <h1>This is the data to save</h1>
+        <p>Some additional information.</p>
+    </div>
+    <button onclick="saveToExcel()">Save to Excel</button>
+
+    <script>
+        function saveToExcel() {
+            const divContent = document.getElementById('my-data').innerHTML;
+            const table = document.createElement('table');
+            const tableRow = table.insertRow();
+            const tableCell = tableRow.insertCell();
+            tableCell.innerHTML = divContent;
+
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.json_to_sheet([{ "Data": divContent }]);
+            XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+
+            XLSX.writeFile(wb, "data.xlsx");
+        }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+</body>
+
+</html>

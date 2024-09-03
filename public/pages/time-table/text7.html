@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Add/Delete Table Column with Local Storage</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="active">
+                <td>User 1</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>User 2</td>
+                <td>Inactive</td>
+            </tr>
+            <tr class="completed">
+                <td>User 3</td>
+                <td>Completed</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="result"></div>
+
+    <script></script>
+
+    <script>
+        const specificClass = "completed"; // Replace with your desired class name
+        const resultDiv = document.getElementById("result");
+
+        const rows = document.querySelectorAll(`tbody tr.${specificClass}`);
+
+        if (rows.length > 0) {
+            let resultText = "<h2>Rows with class '" + specificClass + "':</h2>";
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("td");
+                resultText += `<p>Name: ${cells[0].textContent}, Status: ${cells[1].textContent}</p>`;
+            });
+            resultDiv.innerHTML = resultText;
+        } else {
+            resultDiv.textContent = "No rows found with class '" + specificClass + "'.";
+        }
+
+
+    </script>
+
+</body>
+
+</html>

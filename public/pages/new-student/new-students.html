@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
+    <title>បញ្ជីព័ត៌មានសិស្ស</title>
+    <!-- plugins:css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../vendors/feather/feather.css">
+    <!-- <link rel="stylesheet" href="./new-students.css"> -->
+    <link rel="stylesheet" href="../../vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="../../vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="manifest" href="../../manifest.json">
+
+    <link rel="stylesheet" href="../../vendors/select2/select2.min.css">
+    <link rel="stylesheet" href="../../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="../../fonts/Siemreap.ttf">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../../images/SalaMOMLogo.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row myKh">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="../../admin.html"><img src="../../images/SalaMOMLogo.png"
+                        class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="../../admin.html"><img src="../../images/SalaMOMLogo.png"
+                        alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav mr-lg-2">
+                    <li class="nav-item nav-search d-none d-lg-block">
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img id="user_img"
+                                src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" id="user_logout">
+                                <i class="ti-power-off text-primary"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                    data-toggle="offcanvas">
+                    <span class="icon-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper myKh">
+            <!-- partial:../../partials/_settings-panel.html -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="ti-settings"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close ti-close"></i>
+                    <p class="settings-heading">SIDEBAR SKINS</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+                    </div>
+                    <p class="settings-heading mt-2">HEADER SKINS</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- partial -->
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas myKh" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-student/new-students.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានផ្ទាល់ខ្លួនសិស្ស</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="../new-employee/new-employee.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">បញ្ជីព័ត៌មានបុគ្គលិក</span>
+                        </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="../preview-score/preview-score.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">របាយការណ៍ពិន្ទុ</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-student/general-time-table.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">កាលវិភាគទូទៅ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../new-student/general-time-table-august.html">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">កាលវិភាគខែសីហា</span>
+                        </a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="icon-paper menu-icon"></i>
+                            <span class="menu-title">កាលវិភាគសិក្សា</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="mdi mdi-brightness-7 menu-icon"></i>
+                            <span class="menu-title">កំណត់ទូទៅ</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="../tools/add-tools.html">កំណត់</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="../tools/new-account.html">បង្កើតគណនីបុគ្គលិក</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-12 grid-margin">
+                            <div class="card card-primary card-outline">
+                                <div class="card-body">
+                                    <!-- <div style="overflow-x: auto; scrollbar-width: none;">
+                                        <h4 class="card-title" style="line-height: 2;">បញ្ជីព័ត៌មានផ្ទាល់ខ្លួនសិស្ស</h4> -->
+                                    <!-- <table class="table borderless">
+                                            <tr>
+                                                <td class="border-0 text-center col-lg-3">
+                                                    <label for="user_teacher_id" class="fw-bold">ជ្រើសរើសកម្រិត</label>
+                                                    <select class="form-control text-center"
+                                                        style="color: black;line-height: 2;" id="sle_level">
+                                                        <option>ជ្រើសរើស</option>
+                                                        <option value="បឋមសិក្សា">បឋមសិក្សា</option>
+                                                        <option value="អនុវិទ្យាល័យ">អនុវិទ្យាល័យ</option>
+                                                        <option value="វិទ្យាល័យ">វិទ្យាល័យ</option>
+                                                    </select>
+                                                </td>
+                                                <td class="border-0 text-center col-lg-3">
+                                                    <label for="user_teacher_id" class="fw-bold">ជ្រើសរើសថ្នាក់</label>
+                                                    <select class="form-control text-center"
+                                                        style="color: black;line-height: 2;" id="sle_grade">
+                                                        <option id="show_grade">ជ្រើសរើស</option>
+                                                    </select>
+                                                </td>
+                                                <td class="border-0 text-center col-lg-3">
+                                                    <label for="user_teacher_id"
+                                                        class="fw-bold">ជ្រើសរើសឆ្នាំសិក្សា</label>
+                                                    <select class="form-control text-center"
+                                                        style="color: black;line-height: 2;" id="sle_year">
+                                                        <option id="show_year">ជ្រើសរើស</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="border-0 text-center"></td>
+                                                <td class="border-0 col-lg-3 text-center">
+                                                    <button id="addNew" type="button" class="btn btn-success btn-sm"
+                                                        data-bs-toggle="modal" data-bs-target="#add_student">
+                                                        <i class="mdi mdi-library-plus"></i> បង្កើតថ្មី
+                                                    </button>
+                                                    <button data-bs-toggle="modal" data-bs-target="#importModal"
+                                                        type="button" id="importStd" class="btn btn-warning btn-sm">
+                                                        <i class="mdi mdi-arrow-down-bold-circle"></i> Import
+                                                    </button>
+                                                </td>
+                                                <td class="border-0 text-center"></td>
+
+                                            </tr>
+                                        </table>
+ -->
+                                    <!-- </div> -->
+
+                                    <div class="input-group mb-3" style="display: none;">
+                                        <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                                            <span class="input-group-text" id="search">
+                                                <i class="icon-search"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" id="stdsearchInput"
+                                            placeholder="ស្វែងរក" aria-label="search" aria-describedby="search">
+                                    </div>
+                                    <div style="height: 75rem;width: 100%;">
+                                        <iframe src="https://salamom-admin.web.app/studentadmin" width="100%"
+                                            height="100%"></iframe>
+
+                                    </div>
+
+                                    <div style="overflow-x: auto; height: 60rem; scrollbar-width: none;display: none;">
+                                        <table class="table table-bordered table-hover p-0 mt-0 mb-0" id="mystdTable">
+                                            <thead>
+                                                <tr class="frezze">
+                                                    <td class="border-dark text-center">ល.រ</td>
+                                                    <td class="border-dark text-center">ថ្នាក់ទី</td>
+                                                    <td class="border-dark text-center">រូបភាព</td>
+                                                    <td class="border-dark text-center">គោត្តនាមនិងនាម</td>
+                                                    <td class="border-dark text-center">អក្សរឡាតាំង</td>
+                                                    <td class="border-dark text-center">ភេទ(KH)</td>
+                                                    <td class="border-dark text-center">ភេទ(EN)</td>
+                                                    <td class="border-dark text-center">កម្រិតភាសាអង់គ្លេស</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="showUserdata" class="border-dark ">
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- Import Data -->
+                                <div class="modal fade" id="importModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <ion-icon name="chevron-back-outline"
+                                                    data-bs-dismiss="modal"></ion-icon>
+                                                <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">
+                                                    បញ្ចូលព័ត៍មានសិស្ស</h1>
+                                                <h1></h1>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div>
+                                                    <form enctype="multipart/form-data">
+                                                        <a href="https://firebasestorage.googleapis.com/v0/b/salamom-d3246.appspot.com/o/SalaMOM%2Fstudents%2Fsample%20import%20student%20information.xlsx?alt=media&token=c00584fd-ec7f-424b-ac2b-ac7fef666826"
+                                                            target="_blank" rel="noopener noreferrer"
+                                                            style="color: rgb(255, 47, 47);">ចុចទីនេះ ដើម្បីទាញយកគំរូជា
+                                                            Excel</a>
+                                                        <div class="mb-3">
+                                                            <label for="formFile" class="form-label">សូមជ្រើសរើសឯកសារជា
+                                                                Excel</label>
+                                                            <input class="form-control" type="file" id="upload"
+                                                                name="files[]">
+                                                        </div>
+                                                    </form>
+                                                    <div style="overflow-x: auto;">
+                                                        <table class="table table-bordered whiteBack table-hover kh"
+                                                            style="font-size: 12px;">
+                                                            <thead
+                                                                style="background-color: blanchedalmond;font-weight: bold;">
+                                                                <tr>
+                                                                    <th scope="col"> # </th>
+                                                                    <th scope="col"> ID </th>
+                                                                    <!-- <th scope="col"> លេខសំគាល់សិស្ស</th> -->
+                                                                    <th scope="col"> នាមត្រកូល និង នាមខ្លួន</th>
+                                                                    <!-- <th scope="col"> នាមត្រកូល</th>
+                                                                    <th scope="col"> នាមខ្លួន </th> -->
+                                                                    <th scope="col"> អក្សរឡាតាំង </th>
+                                                                    <th scope="col"> ថ្នាក់ទី </th>
+                                                                    <th scope="col"> ភេទ(KH) </th>
+                                                                    <th scope="col"> ភេទ(en) </th>
+                                                                    <th scope="col"> កម្រិតភាសាអង់គ្លេស </th>
+                                                                    <!-- <th scope="col"> ថ្ងៃខែឆ្នាំកំណើត </th>
+                                                                    <th scope="col"> អាយុ </th>
+                                                                    <th scope="col"> ភូមិ </th>
+                                                                    <th scope="col"> ស្រុក/ខណ្ឌ</th>
+                                                                    <th scope="col"> ឃុំ/សង្កាត់</th>
+                                                                    <th scope="col"> ខេត្ត/ក្រុង</th>
+                                                                    <th scope="col"> ឬវាយបញ្ជូលទីកន្លែងកំណើត</th>
+                                                                    <th scope="col"> ភូមិ </th>
+                                                                    <th scope="col"> ស្រុក/ខណ្ឌ </th>
+                                                                    <th scope="col"> ឃុំ/សង្កាត់ </th>
+                                                                    <th scope="col"> ខេត្ត/ក្រុង </th>
+                                                                    <th scope="col"> ឬវាយបញ្ជូលទីលំនៅបច្ចុប្បន្ន </th>
+                                                                    <th scope="col"> ឈ្មោះឪពុក </th>
+                                                                    <th scope="col"> មុខរបរ </th>
+                                                                    <th scope="col"> ឈ្មោះម្តាយ </th>
+                                                                    <th scope="col"> មុខរបរ </th>
+                                                                    <th scope="col"> ទូរស័ព្ឌ ឪពុក-ម្តាយ</th>
+                                                                    <th scope="col"> ហ្វែសបុក/Facebook</th>
+                                                                    <th scope="col"> អាណាព្យាបាល</th>
+                                                                    <th scope="col"> មុខរបរ </th>
+                                                                    <th scope="col"> ទូរស័ព្ឌ អាណាព្យាបាល</th>
+                                                                    <th scope="col"> ផ្សេងៗ</th>
+                                                                    <th scope="col"> ត្រូវជា</th> -->
+
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="showTable" style="color: black;">
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="btn_upload" type="button" class="btn btn-success btn-sm">
+                                                    <i
+                                                        class="mdi mdi-arrow-down-bold-circle m-1"></i>បញ្ជូនទិន្នន័យ</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="add_student" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="fw-bold">បង្កើតព័ត៌មានផ្ទាល់ខ្លួនសិស្ស</h4>
+                                                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button> -->
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="content" id="new-teacher">
+                                                    <!-- <div class="container-fluid"> -->
+                                                    <!-- <div class="row">
+                                                            <div class="col-lg-12"> -->
+                                                    <!-- <div class="card card-primary card-outline">
+                                                                    <div class="card-body"> -->
+                                                    <div class="form-container">
+                                                        <div class="col-lg-10">
+                                                            <div class="row">
+                                                                <div class="col-lg-8">
+                                                                    <div class="row">
+                                                                        <!-- <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_student_id">លេខសំគាល់សិស្ស</label><span
+                                                                                class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                class="form-control" required="required"
+                                                                                style="line-height: 2;" type="text"
+                                                                                name="student[student_id]" id="fill1" />
+                                                                        </div> -->
+                                                                        <div class="col-lg-6">
+                                                                            <label for="student_duty">គោត្តនាម
+                                                                                និងនាម</label>
+                                                                            <span class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                class="form-control" required="required"
+                                                                                style="line-height: 2;" type="text"
+                                                                                name="student[full_name_kh]"
+                                                                                id="fill2" />
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_gender">កម្រិតភាសាអង់គ្លេស</label><span
+                                                                                class="text-red">*</span>
+                                                                            <select class="form-control text-center"
+                                                                                style="color: black;line-height: 2;"
+                                                                                required="required"
+                                                                                name="student[gender]" id="fill31">
+                                                                                <option value="">
+                                                                                    កម្រិតភាសាអង់គ្លេស
+                                                                                </option>
+                                                                                <option value="level1">
+                                                                                    Level 1
+                                                                                </option>
+                                                                                <option value="level2">
+                                                                                    Level 2
+                                                                                </option>
+                                                                                <option value="level3">
+                                                                                    Level 3
+                                                                                </option>
+                                                                                <option value="level4">
+                                                                                    Level 4
+                                                                                </option>
+                                                                                <option value="level5">
+                                                                                    Level 5
+                                                                                </option>
+                                                                                <option value="level6">
+                                                                                    Level 6
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <!-- <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_full_name_kh">នាមត្រកូល</label><span
+                                                                                class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                class="form-control" required="required"
+                                                                                style="line-height: 2;" type="text"
+                                                                                name="student[full_name_kh]"
+                                                                                id="fill3" />
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_full_name_kh">នាមខ្លួន</label><span
+                                                                                class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                class="form-control" required="required"
+                                                                                style="line-height: 2;" type="text"
+                                                                                name="student[full_name_kh]"
+                                                                                id="fill4" />
+                                                                        </div> -->
+                                                                        <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_full_name_latin">អក្សរឡាតាំង</label>
+                                                                            <span class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                style="line-height: 2;"
+                                                                                onkeyup="this.value = this.value.toUpperCase()"
+                                                                                class="form-control" type="text"
+                                                                                name="student[full_name_latin]"
+                                                                                id="fill5" />
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_full_name_latin">ថ្នាក់ទី</label>
+                                                                            <span class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                style="line-height: 2;"
+                                                                                onkeyup="this.value = this.value.toUpperCase()"
+                                                                                class="form-control" type="text"
+                                                                                name="student[full_name_latin]"
+                                                                                id="fill6" />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-lg-6">
+                                                                            <label for="student_gender">ភេទ</label><span
+                                                                                class="text-red">*</span>
+                                                                            <select class="form-control text-center"
+                                                                                style="color: black;line-height: 2;"
+                                                                                required="required"
+                                                                                name="student[gender]" id="fill7">
+                                                                                <option value="">
+                                                                                    ជ្រើសរើសភេទ
+                                                                                </option>
+                                                                                <option value="ប">
+                                                                                    ប្រុស
+                                                                                </option>
+                                                                                <option value="ស">
+                                                                                    ស្រី
+                                                                                </option>
+                                                                            </select>
+                                                                        </div>
+
+                                                                        <!-- <div class="col-lg-6">
+                                                                            <label
+                                                                                for="student_date_of_birth">ថ្ងៃខែឆ្នាំកំណើត</label><span
+                                                                                class="text-red">*</span>
+                                                                            <input autocomplete="off"
+                                                                                placeholder="ថ្ងៃ/ខែ/ឆ្នាំ"
+                                                                                style="line-height: 2;"
+                                                                                class="form-control date-input-mask"
+                                                                                required="required" type="text"
+                                                                                name="student[date_of_birth]"
+                                                                                id="fill8" />
+                                                                        </div>
+                                                                        <div class="col-lg-6">
+                                                                            <label for="student_gender">អាយុ</label>
+                                                                            <input autocomplete="off" placeholder="អាយុ"
+                                                                                style="line-height: 2;"
+                                                                                class="form-control" type="text"
+                                                                                name="student[date_of_birth]"
+                                                                                id="fill9" />
+
+                                                                        </div> -->
+                                                                    </div>
+
+                                                                    <div class="row">
+                                                                        <div class="col-lg-3">
+                                                                            <div id="branch-profile">
+                                                                                <div id="progressContainer2"
+                                                                                    class="text-center">
+                                                                                    <p id="uploadProgress2"
+                                                                                        style="color: rgb(0, 0, 0);">
+                                                                                        100%
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="image__wrap">
+                                                                                    <table
+                                                                                        class="table-borderless table text-center">
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <input type="file"
+                                                                                                    id="imageFile2"
+                                                                                                    accept="image/*"
+                                                                                                    style="display: none;">
+                                                                                                <button
+                                                                                                    id="uploadButton2"
+                                                                                                    style="background-color: transparent;border: none;color: aliceblue;">
+                                                                                                    <div class="img-preview"
+                                                                                                        style="padding: 15rem;">
+                                                                                                        <img class="image-full-height"
+                                                                                                            style="width: 100%;"
+                                                                                                            src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                                                                                            id="uploadedImage2">
+
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="image__edit">
+                                                                                                        <span>ជ្រើសរើសរូបសំបុត្រកំណើត</span>
+                                                                                                    </div>
+                                                                                                </button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td style="display: block;">
+                                                                                                <input type="text"
+                                                                                                    id="showURL2">
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-lg-3 m-3 d-flex">
+                                                                    <div id="branch-profile">
+                                                                        <div id="progressContainer" class="text-center">
+                                                                            <p id="uploadProgress"
+                                                                                style="color: rgb(0, 0, 0);">
+                                                                                100%
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="image__wrap">
+                                                                            <table
+                                                                                class="table-borderless table text-center">
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input type="file"
+                                                                                            id="imageFile"
+                                                                                            accept="image/*"
+                                                                                            style="display: none;">
+                                                                                        <button id="uploadButton"
+                                                                                            style="background-color: transparent;border: none;color: aliceblue;">
+                                                                                            <div class="img-preview"
+                                                                                                style="padding: 15rem;">
+                                                                                                <img class="image-full-height"
+                                                                                                    src="https://res.cloudinary.com/salamomschool/image/upload/v1709357129/fab63d7f9d9dd9de94019d884eac4a25.png"
+                                                                                                    id="uploadedImage">
+
+                                                                                            </div>
+                                                                                            <div class="image__edit">
+                                                                                                <span>ជ្រើសរើសរូបថត</span>
+                                                                                            </div>
+
+                                                                                        </button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <td style="display: block;">
+                                                                                        <input type="text" id="showURL">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- <div class="row place-container">
+                                                                <div class="place-devider">
+                                                                    ទីកន្លែងកំណើត</div>
+                                                                <div id="village" class="col-lg-3">
+                                                                    <label for="fill14">ភូមិ</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill10" />
+                                                                </div>
+
+                                                                <div id="district" class="col-lg-3">
+                                                                    <label for="fill12">ស្រុក/ខណ្ឌ</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill11" />
+                                                                </div>
+
+                                                                <div id="commune" class="col-lg-3">
+                                                                    <label for="fill13">ឃុំ/សង្កាត់</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill12" />
+                                                                </div>
+
+                                                                <div id="province" class="col-lg-3">
+                                                                    <label for="fill11">ខេត្ត/ក្រុង</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[address]" id="fill13" />
+                                                                </div>
+
+                                                                <div class="col-lg-12">
+                                                                    <div class="col-lg-12">
+                                                                        <label
+                                                                            for="fill15">ឬវាយបញ្ជូលទីកន្លែងកំណើត</label>
+                                                                        <textarea class="form-control"
+                                                                            style="line-height: 2;" name="placeOfBirth"
+                                                                            id="fill14" cols="50" rows="5"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row place-container">
+                                                                <div class="place-devider">
+                                                                    ទីលំនៅបច្ចុប្បន្ន</div>
+                                                                <div id="current-village" class="col-lg-3">
+                                                                    <label for="fill19">ភូមិ</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill15" />
+                                                                </div>
+
+                                                                <div id="current-district" class="col-lg-3">
+                                                                    <label for="fill17">ស្រុក/ខណ្ឌ</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill16" />
+                                                                </div>
+
+                                                                <div id="current-commune" class="col-lg-3">
+                                                                    <label for="fill18">ឃុំ/សង្កាត់</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill17" />
+                                                                </div>
+
+                                                                <div id="current-province" class="col-lg-3">
+                                                                    <label for="fill16">ខេត្ត/ក្រុង</label>
+                                                                    <input autocomplete="off" class="form-control"
+                                                                        style="line-height: 2;" type="text"
+                                                                        name="student[full_birth_address]"
+                                                                        id="fill18" />
+                                                                </div>
+
+                                                                <div class="col-lg-12">
+                                                                    <label
+                                                                        for="fill20">ឬវាយបញ្ជូលទីលំនៅបច្ចុប្បន្ន</label>
+                                                                    <textarea class="form-control" name="placeOfBirth"
+                                                                        style="line-height: 2;" id="fill19" cols="50"
+                                                                        rows="5"></textarea>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="card">
+                                                                        <div class="card-header">
+                                                                            <h5><b>ព័ត៌មានគ្រួសារ</b>
+                                                                            </h5>
+                                                                        </div>
+
+                                                                        <div class="card-body">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-5">
+                                                                                    <label
+                                                                                        for="fill29">ឈ្មោះឪពុក</label>
+                                                                                    <input autocomplete="off"
+                                                                                        style="line-height: 2;"
+                                                                                        class="form-control" type="text"
+                                                                                        name="student[father_name]"
+                                                                                        id="fill20" />
+                                                                                </div>
+
+                                                                                <div class="col-lg-3">
+                                                                                    <label for="fill30">មុខរបរ</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[father_occupation]"
+                                                                                        id="fill21" />
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="row">
+                                                                                <div class="col-lg-5">
+                                                                                    <label
+                                                                                        for="fill31">ឈ្មោះម្តាយ</label>
+                                                                                    <input autocomplete="off"
+                                                                                        style="line-height: 2;"
+                                                                                        class="form-control" type="text"
+                                                                                        name="student[mother_name]"
+                                                                                        id="fill22" />
+                                                                                </div>
+
+                                                                                <div class="col-lg-3">
+                                                                                    <label for="fill32">មុខរបរ</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[mother_occupation]"
+                                                                                        id="fill23" />
+                                                                                </div>
+                                                                                <div class="col-lg-5">
+                                                                                    <label for="fill30">ទូរស័ព្ឌ
+                                                                                        ឪពុក-ម្តាយ</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[father_occupation]"
+                                                                                        id="fill24" />
+                                                                                </div>
+                                                                                <div class="col-lg-5">
+                                                                                    <label
+                                                                                        for="fill32">ហ្វែសបុក/Facebook</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[mother_occupation]"
+                                                                                        id="fill25" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-lg-5">
+                                                                                    <label
+                                                                                        for="fill31">អាណាព្យាបាល</label>
+                                                                                    <input autocomplete="off"
+                                                                                        style="line-height: 2;"
+                                                                                        class="form-control" type="text"
+                                                                                        name="student[mother_name]"
+                                                                                        id="fill26" />
+                                                                                </div>
+
+                                                                                <div class="col-lg-3">
+                                                                                    <label for="fill32">មុខរបរ</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[mother_occupation]"
+                                                                                        id="fill27" />
+                                                                                </div>
+                                                                                <div class="col-lg-3">
+                                                                                    <label for="fill32">ទូរស័ព្ឌ
+                                                                                        អាណាព្យាបាល</label>
+                                                                                    <input class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        type="text"
+                                                                                        name="student[mother_occupation]"
+                                                                                        id="fill28" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-lg-12">
+                                                                                    <label for="fill33">ផ្សេងៗ</label>
+                                                                                    <textarea class="form-control"
+                                                                                        style="line-height: 2;"
+                                                                                        name="placeOfBirth" id="fill29"
+                                                                                        cols="50" rows="5"></textarea>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="row">
+                                                                                <div class="col-lg-3">
+                                                                                    <label for="fill34">ត្រូវជា</label>
+                                                                                    <select class="form-control"
+                                                                                        style="color: black; line-height: 2;"
+                                                                                        required="required"
+                                                                                        name="student[gender]"
+                                                                                        id="fill30">
+                                                                                        <option value="">
+                                                                                            ជ្រើសរើស
+                                                                                        </option>
+                                                                                        <option value="សិស្សទូទៅ">
+                                                                                            សិស្សទូទៅ
+                                                                                        </option>
+                                                                                        <option value="កូនបុគ្គលិក">
+                                                                                            កូនបុគ្គលិក
+                                                                                        </option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button id="btnAdd"
+                                                    class="btn btn-success btn-rounded btn-fw btn-sm">បញ្ចូល</button>
+                                                <button id="btnUpdate"
+                                                    class="btn btn-warning btn-rounded btn-fw btn-sm">កែ</button>
+                                                <button id="btnDelete"
+                                                    class="btn btn-danger btn-rounded btn-fw btn-sm">លុប</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                    All rights reserved.</span>
+
+            </div>
+        </footer>
+        <!-- partial -->
+    </div>
+    <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script src="../../vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="../../vendors/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="../../vendors/select2/select2.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../js/off-canvas.js"></script>
+    <script src="../../js/hoverable-collapse.js"></script>
+    <script src="../../js/template.js"></script>
+    <script src="../../js/settings.js"></script>
+    <script src="../../js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- <script src="../../js/file-upload.js"></script> -->
+    <script src="../../js/typeahead.js"></script>
+    <script src="../../js/select2.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- End custom js for this page-->
+    <!-- <script src="./upload-image.js"></script> -->
+    <!-- <script src="./new-students.js"></script> -->
+
+</body>
+
+</html>

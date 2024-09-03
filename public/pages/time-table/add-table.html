@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="myTable">
+        <tr>
+            <th>Item</th>
+        </tr>
+        <tr>
+            <td>Item 1</td>
+        </tr>
+    </table><br>
+
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="addColumn()">Add Column</button>
+    <button onclick="saveTable()">Save Table</button>
+    <button onclick="restoreTable()">Restore Table</button>
+
+    <script>
+        // Function to add a new row
+        function addRow() {
+            var table = document.getElementById("myTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = "New Item";
+        }
+
+        // Function to add a new column
+        function addColumn() {
+            var table = document.getElementById("myTable");
+            var rows = table.rows;
+            for (var i = 0; i < rows.length; i++) {
+                var cell = rows[i].insertCell(-1);
+                cell.innerHTML = "New";
+            }
+        }
+
+        // Function to save table data to local storage
+        function saveTable() {
+            var tableData = [];
+            var table = document.getElementById("myTable");
+            for (var r = 0, n = table.rows.length; r < n; r++) {
+                for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+                    tableData.push(table.rows[r].cells[c].innerHTML);
+                }
+            }
+            localStorage.setItem("tableData", JSON.stringify(tableData));
+        }
+
+        // Function to restore table data from local storage
+        function restoreTable() {
+            if (localStorage.getItem("tableData")) {
+                var tableData = JSON.parse(localStorage.getItem("tableData"));
+                var table = document.getElementById("myTable");
+                table.innerHTML = "";
+                var row = table.insertRow(-1);
+                var index = 0;
+                while (index < tableData.length) {
+                    if (index % table.rows[0].cells.length === 0) {
+                        row = table.insertRow(-1);
+                    }
+                    var cell = row.insertCell(-1);
+                    cell.innerHTML = tableData[index++];
+                }
+            }
+        }
+
+        // Call restoreTable on page load to restore data
+        window.onload = restoreTable;
+    </script>
+
+</body>
+
+</html>

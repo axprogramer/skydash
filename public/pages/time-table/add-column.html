@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Table with Add Column</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="myTable">
+        <tr>
+            <th>Column 1</th>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+        </tr>
+    </table>
+    <button onclick="addColumn()">Add Column</button>
+
+    <script>
+        function addColumn() {
+            var table = document.getElementById("myTable");
+            var header = table.querySelectorAll('thead tr');
+            var bodyRow = table.querySelectorAll('tbody');
+            var getRow = bodyRow.rows[0];
+
+            // Add a new header cell
+            var newHeaderCell = document.createElement("th");
+            newHeaderCell.innerHTML = "Column " + (header.cells.length + 1);
+            header.appendChild(newHeaderCell);
+
+            // Add a new body cell
+            var newBodyCell = document.createElement("td");
+            newBodyCell.innerHTML = "Data " + (header.cells.length);
+            bodyRow.appendChild(newBodyCell);
+        }
+    </script>
+</body>
+
+</html>
